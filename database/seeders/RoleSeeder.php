@@ -14,12 +14,12 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         Role::factory(1)->create([
-            'access'=>(0),
+            'access'=>("user"),
 
         ]);
 
         Role::factory(1)->create([
-            'access'=>(1),
+            'access'=>("admin"),
         ]);
     }
 }

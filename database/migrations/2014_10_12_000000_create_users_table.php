@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->tinyText('password');
             $table->tinyText('payment_method')->nullable();
-            $table->foreignUuId('roles_id');
+            $table->foreignUuId('roles_id')->constrained();
             $table->rememberToken();
             $table->timestamps();
         });
