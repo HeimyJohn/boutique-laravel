@@ -27,12 +27,12 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             RoleSeeder::class,
             ProductSeeder::class,
-            //Products_orderedSeeder::class,
-            //Products_ordered_has_orderSeeder::class,
             UserSeeder::class,
             CommentSeeder::class,
             AddressSeeder::class,
-            //OrderSeeder::class,
+            OrderSeeder::class,
+            ProductOrderedSeeder::class,
+            ProductOrderedHasOrderSeeder::class,
         ]);
 
     }
