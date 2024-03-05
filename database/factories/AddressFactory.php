@@ -25,7 +25,6 @@ class AddressFactory extends Factory
             'city'          => fake()->city(),
             'country'       => fake()->country(),
             'user_id'       => User::query()->inRandomOrder()->first()?->id ?? User::factory(),
-            // fake()->randomElement(User::pluck('id')->toArray()),
         ];
     }
 }
