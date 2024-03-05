@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->tinyText('first_name');
+            $table->tinyText('last_name');
+            $table->tinyText('phone');
+            $table->tinyText('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->tinyText('password');
             $table->tinyText('payment_method')->nullable();
