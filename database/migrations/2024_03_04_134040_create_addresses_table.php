@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->tinyText('password');
-            $table->tinyText('payment_method')->nullable();
-            $table->foreignUuId('roles_id')->constrained();
-            $table->rememberToken();
+            $table->tinyText('way_number');
+            $table->mediumText('way');
+            $table->integer('postal_code');
+            $table->tinyText('city');
+            $table->tinyText('country');
+            $table->foreignUuid('user_id')->constrained('users');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('delivery_contact_details');
     }
 };
