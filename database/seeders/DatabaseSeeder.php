@@ -3,7 +3,11 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Category;
+use App\Models\User;
+use App\Models\Vat;
 use Illuminate\Database\Seeder;
+use phpDocumentor\Reflection\Types\Integer;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +22,18 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $this->call([
+            VatSeeder::class,
+            CategorySeeder::class,
+            RoleSeeder::class,
+            ProductSeeder::class,
+            UserSeeder::class,
+            CommentSeeder::class,
+            AddressSeeder::class,
+            OrderSeeder::class,
+            ProductOrderedSeeder::class,
+            ProductOrderedHasOrderSeeder::class,
+        ]);
+
     }
 }
