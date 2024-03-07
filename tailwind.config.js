@@ -10,18 +10,13 @@
 //   },
 //   plugins: [require("daisyui")],
 // }
-
-
-/** @type {import('tailwindcss').Config} */
 export default {
     content: [
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
     ],
-    
     theme: {
-
         extend: {
 
             colors: {
@@ -36,7 +31,7 @@ export default {
             },
             dropShadow: {
                 'white': '0 0px 50px rgb(180, 180, 180, 0.5)',
-            }
+            },
 
             fontFamily: {
                 ['serif']: ['Roboto'],

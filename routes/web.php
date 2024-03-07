@@ -20,9 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
 // Route to controller : indicate controller class and function
 Route::get('/catalogue', [CatalogueController::class, 'index'] );
-=======
->>>>>>> dev
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product');

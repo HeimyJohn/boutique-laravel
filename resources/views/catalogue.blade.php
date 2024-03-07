@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <div class="dark dark:bg-black dark:text-white">
+    <div class="bg-black text-white">
         <h1 class="text-5xl text-center border-b-4">CATALOGUE</h1>
         <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
 
@@ -13,7 +13,7 @@
                         <div
                             class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-black lg:aspect-none group-hover:opacity-75 lg:h-80">
                             <img
-                                src="https://enhakkore.net/wp-content/uploads/2018/07/CLAVIER-EMPIRE-K300.png"
+                                src={{ asset('image/CLAVIER.png') }}
                                 alt="Le clavier de l'enfer."
                                 class="drop-shadow-white h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
