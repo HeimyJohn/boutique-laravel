@@ -11,7 +11,7 @@
 
 <body>
 
-<div class="container">
+<div class="container bg-black-figma">
     @yield('content')
 </div>
 

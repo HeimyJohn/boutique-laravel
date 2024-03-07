@@ -20,7 +20,7 @@
                         <div class="">
                             <div>
                                 <h3 class="text-2xl">
-                                    <a href="#">
+                                    <a href="product/{{ $product->id }}">
                                         <span aria-hidden="true" class="absolute inset-0"></span>
                                         {{ $product->name }}
                                     </a>
