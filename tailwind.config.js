@@ -24,14 +24,11 @@ export default {
 
       dropShadow: {
         'white': '0 0px 50px rgb(180, 180, 180, 0.5)',
-    },
-
-    fontFamily: {
-        ['serif']: ['Roboto'],
-        ['sans']: ['Roboto'],
-        ['mono']: ['Roboto'],
-    },
+      },
     },
   },
-  plugins: [require("daisyui"), require('@tailwindcss/forms'),],
+  plugins: [
+    require("daisyui"),
+    require('@tailwindcss/forms'),
+  ],
 }
