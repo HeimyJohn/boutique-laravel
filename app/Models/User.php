@@ -15,7 +15,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, HasUuids, Notifiable;
 
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -54,12 +54,12 @@ class User extends Authenticatable
     {
         return $this->hasOne(Role::class);
     }
-    
+
     public function address(): HasMany
     {
         return $this->hasMany(Address::class);
     }
-    
+
     public function comment(): HasMany
     {
         return $this->hasMany(Comment::class);

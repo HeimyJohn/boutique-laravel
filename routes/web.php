@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [HomepageController::class, 'show'])->name('homepage');
+Route::get('/catalogue', [CatalogueController::class, 'index'] );
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product');

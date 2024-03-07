@@ -6,7 +6,7 @@
 <div class="flex flex-col pl-5 pr-5 pt-16 pb-32 lg:w-11/12 items-end md:pl-16 md:pr-16">
     <div class="lg:flex lg:mt-20">
         <div class="lg:w-6/12 lg:mr-10 mt-20 lg:mt-0">
-            <img class="object-contain drop-shadow-white lg:mt-0" src="{{ asset("image/pngimg.com - keyboard_PNG5861.png") }}" alt="product image">
+            <img class="object-contain drop-shadow-white lg:mt-0" src=" {{ asset('image/CLAVIER.png') }}" alt="product image">
         </div>
         <div class="lg:w-6/12 flex flex-col justify-between lg:ml-10">
             <div>
