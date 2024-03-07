@@ -3,7 +3,7 @@
 @section('title', 'Produit')
 
 @section('content')
-<div class="flex flex-col pl-5 pr-5 pt-16 pb-32 lg:w-11/12 items-end md:pl-16 md:pr-16">
+<div class="flex flex-col pl-5 pr-5 pt-16 pb-32 items-end md:pl-16 md:pr-16">
     <div class="lg:flex lg:mt-20">
         <div class="lg:w-6/12 lg:mr-10 mt-20 lg:mt-0">
             <img class="object-contain drop-shadow-white lg:mt-0" src=" {{ asset('image/CLAVIER.png') }}" alt="product image">
