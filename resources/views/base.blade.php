@@ -9,9 +9,9 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
+<body class="">
 
-<div class="container bg-black-figma">
+<div class="bg-black-figma">
     @yield('content')
 </div>
 
