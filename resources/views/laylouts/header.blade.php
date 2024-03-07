@@ -16,7 +16,7 @@
 
             <!-- menu burger -->
             <div class=" lg:hidden">
-                <div x-data="{ isOpen: false }" class=relative">
+                <div x-data="{ isOpen: false }" class="relative">
                     <button type="button" x-on:click="open = !open"
                             class="flex items-center text-white-figma hover:text-yellow-figma"
                             id="menu-button" aria-expanded="false" aria-haspopup="false">
