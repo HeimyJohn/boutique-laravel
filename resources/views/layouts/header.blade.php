@@ -51,9 +51,9 @@
 
                 <!-- HOME / CATALOGUE -->
                 <div class="flex">
-                    <a href="#"
+                    <a href="/"
                        class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium">Home</a>
-                    <a href="#"
+                    <a href="/catalogue"
                        class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium font-['Roboto'] ">Catalogue</a>
                 </div>
             </div>
