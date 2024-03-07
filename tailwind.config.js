@@ -10,19 +10,13 @@
 //   },
 //   plugins: [require("daisyui")],
 // }
-
-
-/** @type {import('tailwindcss').Config} */
 export default {
     content: [
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
     ],
-
-
     theme: {
-
         extend: {
 
             colors: {
@@ -34,6 +28,9 @@ export default {
                 "gray-figma": "#3e3e3e", // gray
                 "blue-variant-figma": "#005e8d", // blue-variant
                 "pink-figma": "#e96379", // pink
+            },
+            dropShadow: {
+                'white': '0 0px 50px rgb(180, 180, 180, 0.5)',
             },
 
             fontFamily: {
