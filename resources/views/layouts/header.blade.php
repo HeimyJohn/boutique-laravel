@@ -1,14 +1,3 @@
-<!doctype html>
-<html lang="fr" data-theme="keyland">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-</head>
-
-<body x-data="{open: false}">
 <nav class="bg-black">
     <div class="mx-auto max-w px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
@@ -120,5 +109,3 @@
         </div>
     </div>
 </nav>
-</body>
-</html>
