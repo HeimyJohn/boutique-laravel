@@ -3,7 +3,7 @@
 @section('title', 'Accueil')
 
 @section('content')
-<div class="flex flex-col items-center w-full">
+<div class="flex flex-col items-center w-full pt-16">
     <div class="h-168 overflow-hidden relative w-full flex items-center">
         <img class="w-full h-full object-cover" src="{{ asset("image/domenico-loia-hGV2TfOh0ns-unsplash.jpg") }}" alt="hero">
         <div class="absolute top-0 w-full h-full flex flex-col items-center">
