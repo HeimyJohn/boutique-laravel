@@ -35,7 +35,7 @@ class UserFactory extends Factory
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
             'payment_method' => 'stripe',
-            'roles_id' => fake()-> randomElement(Role::pluck('id')->toArray()),
+            'roles_id' => Role::where('access', 'user')->first()->id,
         ];
     }
 

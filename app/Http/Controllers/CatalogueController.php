@@ -14,11 +14,21 @@ class CatalogueController extends Controller
 //    {
 //        return Product::paginate(15);
 //    }
-    public function index() : View
+    public function index(Request $search)
     {
+        $text = $search->input('search');
+
+        if ($text) {
+            $products = Product::where('name', 'like', '%' . $text . '%')->simplePaginate(4);
+        } else {
+            $products = Product::paginate(8);
+        }
+
         return view('catalogue', [
-            'products' => Product::paginate(8), // Product::all(),
-            ] ); // ['products' => DB::table('products')->paginate(15) ]
+            'search_terms' => $text,
+            'products' => $products,
+        ]);
+
     }
 
 }

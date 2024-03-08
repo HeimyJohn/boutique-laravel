@@ -1,4 +1,6 @@
+
 <nav class="bg-black fixed z-20 w-full">
+
     <div class="mx-auto max-w px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
 
@@ -88,9 +90,18 @@
                                           clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <input id="search" name="search"
-                                   class="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
-                                   placeholder="Search" type="search">
+
+                            <form method="GET" action="/catalogue/">
+                                @csrf
+                                <input id="search"
+                                       name="search"
+                                       class="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
+                                       placeholder="Search"
+                                       type="search"
+                                    value="{{ request('search') }}"
+                                >
+                            </form>
+
                         </div>
                     </div>
                 </div>
