@@ -1,8 +1,13 @@
 <?php
 
+use App\Http\Controllers\CardController;
 use App\Http\Controllers\ProductAddController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\CatalogueController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +22,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('toto');
 
 // Route pour productadd
+Route::post('/product/store', [ProductAddController::class, 'store'])->name('product.store');
 Route::get('/product/add', [ProductAddController::class, 'create'])->name('product.create');
-Route::post('/product/add', [ProductAddController::class, 'store'])->name('product.store');
 
 
 Route::get('/dashboard', function () {

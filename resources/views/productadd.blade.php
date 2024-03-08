@@ -37,8 +37,8 @@
 
             <!-- Categories -->
             <div class="mt-4 ">
-                <x-input-label for="categories" :value="__('Catégorie')" />
-                <select class="form-control w-full" name="categories" id="categories">
+                <x-input-label for="category" :value="__('Catégorie')" />
+                <select class="form-control w-full" name="category" id="category">
                     @foreach($categories as $category)
                         <option value="{{ $category['name'] }}">{{ ucfirst($category['name']) }}</option>
                     @endforeach
