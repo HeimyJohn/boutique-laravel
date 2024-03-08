@@ -1,12 +1,13 @@
-<body x-data="{open: false}">
-<nav class="bg-black">
+
+<nav class="bg-black fixed z-20 w-full">
+
     <div class="mx-auto max-w px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
 
 
             <!-- menu burger -->
             <div class=" lg:hidden">
-                <div x-data="{ isOpen: false }" class=relative">
+                <div x-data="{ isOpen: false }" class="relative">
                     <button type="button" x-on:click="open = !open"
                             class="flex items-center text-white-figma hover:text-yellow-figma"
                             id="menu-button" aria-expanded="false" aria-haspopup="false">
@@ -52,9 +53,9 @@
 
                 <!-- HOME / CATALOGUE -->
                 <div class="flex">
-                    <a href="#"
+                    <a href="/"
                        class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium">Home</a>
-                    <a href="#"
+                    <a href="/catalogue"
                        class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium font-['Roboto'] ">Catalogue</a>
                 </div>
             </div>
@@ -88,6 +89,7 @@
                                           clip-rule="evenodd"/>
                                 </svg>
                             </div>
+
                             <form method="GET" action="/catalogue/">
                                 @csrf
                                 <input id="search"
@@ -98,6 +100,7 @@
                                     value="{{ request('search') }}"
                                 >
                             </form>
+
                         </div>
                     </div>
                 </div>
@@ -117,5 +120,3 @@
         </div>
     </div>
 </nav>
-</body>
-</html>
