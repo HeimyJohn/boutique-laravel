@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CardController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\Controller;
@@ -24,3 +25,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomepageController::class, 'show'])->name('homepage');
 Route::get('/catalogue', [CatalogueController::class, 'index'] );
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product');
+Route::get('/card', [CardController::class, 'show'])->name('card');
