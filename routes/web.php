@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CatalogueController;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,10 +16,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::get('/', [HomepageController::class, 'show'])->name('homepage');
 Route::get('/catalogue', [CatalogueController::class, 'index'] );
