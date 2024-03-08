@@ -1,12 +1,11 @@
-<body x-data="{open: false}">
-<nav class="bg-black">
+<nav class="bg-black fixed z-20 w-full">
     <div class="mx-auto max-w px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
 
 
             <!-- menu burger -->
             <div class=" lg:hidden">
-                <div x-data="{ isOpen: false }" class=relative">
+                <div x-data="{ isOpen: false }" class="relative">
                     <button type="button" x-on:click="open = !open"
                             class="flex items-center text-white-figma hover:text-yellow-figma"
                             id="menu-button" aria-expanded="false" aria-haspopup="false">
@@ -34,10 +33,12 @@
                     role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1"
                     @click.outside="open = false">
                     <div class="py-1" role="none">
-                        <a href="#" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
-                           id="menu-item-0">Accueil</a>
-                        <a href="#" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                        <a href="/" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                           id="menu-item-0">Home</a>
+                        <a href="/catalogue" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
                            id="menu-item-1">Catalogue</a>
+                        <a href="/account" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                           id="menu-item-1">Compte</a>
                     </div>
                 </div>
             </div>
@@ -46,14 +47,13 @@
             <div class="hidden lg:flex items-center space-x-6">
                 <!-- LOGO Keyland -->
                 <div class="flex">
-                    <img class="h-12 w-auto" src="{{ asset("image/logo.keyland.svg") }}"
-                         alt="Logo Keyland">
+                    <img class="h-12 w-auto" src="{{ asset("image/logo.keyland.svg") }}" alt="Logo Keyland">
                 </div>
 
                 <!-- HOME / CATALOGUE -->
                 <div class="flex">
                     <a href="/"
-                       class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium">Accueil</a>
+                       class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium">Home</a>
                     <a href="/catalogue"
                        class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium font-['Roboto'] ">Catalogue</a>
                 </div>
@@ -88,27 +88,33 @@
                                           clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <input id="search" name="search"
-                                   class="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
-                                   placeholder="Search" type="search">
+
+                            <form method="GET" action="/catalogue/">
+                                @csrf
+                                <input id="search"
+                                       name="search"
+                                       class="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
+                                       placeholder="Search"
+                                       type="search"
+                                       value="{{ request('search') }}"
+                                >
+                            </form>
+
                         </div>
                     </div>
                 </div>
 
                 <!-- picto cart -->
-                <button type="button" class="relative rounded-full ">
-                    <img class="w-8 " src="{{ asset("image/picto.cart.svg") }}" alt="Picto Cart">
-                </button>
+                <a href="/card" class="px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">
+                        <img class="w-8 " src="{{ asset("image/picto.cart.svg") }}" alt="Picto Cart">
+                </a>
 
                 <!-- picto compte -->
-                <button type="button" class="relative rounded-full p-1 hidden lg:block">
+                <a href="/account" class="px-4 py-2 text-sm hidden lg:block" role="menuitem" tabindex="-1" id="menu-item-0">
                     <img class="h-8 w-auto" src="{{ asset("image/picto.compte.svg") }}" alt="Picto Compte">
-                </button>
+                </a>
 
             </div>
-
         </div>
     </div>
 </nav>
-</body>
-</html>
