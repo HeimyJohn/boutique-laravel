@@ -4,7 +4,7 @@ use App\Http\Controllers\CardController;
 use App\Http\Controllers\ProductAddController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CatalogueController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +21,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomepageController::class, 'show'])->name('homepage');
-Route::get('/catalogue', [CatalogueController::class, 'index'] );
+
+Route::get('/catalogue', [CatalogueController::class, 'index'] )->name('catalogue');
 
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product');
 Route::get('/card', [CardController::class, 'show'])->name('card');

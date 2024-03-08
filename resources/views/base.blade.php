@@ -14,6 +14,7 @@
 
 <body x-data="{open: false}" class="">
 
+<<<<<<< Updated upstream
 <div class="bg-black-figma ">
     @include('layouts.header')
     <!-- popup pour dire qu'un produit à était ajouter-->
@@ -22,6 +23,15 @@
             {{ session('success') }}
         </div>
     @endif
+=======
+
+<div class="bg-black-figma">
+    @auth
+        @include("layouts.navigation")
+    @else
+        @include("layouts.navbar")
+    @endauth
+>>>>>>> Stashed changes
     @yield('content')
 </div>
 
