@@ -14,7 +14,7 @@ class Category extends Model
     use HasFactory, HasUuids;
 
     public $timestamps = false;
-
+    public function product(): HasMany
     {
         return $this->hasMany(Product::class);
     }
