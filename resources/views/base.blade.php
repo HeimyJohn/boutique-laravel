@@ -7,13 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     @vite('resources/css/app.css')
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
+
+
 
 <body>
 
-<div class="container bg-black-figma">
+<div class="bg-black-figma ">
+    @include('layouts.header')
+    <!-- popup pour dire qu'un produit à était ajouter-->
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     @yield('content')
 </div>
+
 
 </body>
 </html>

@@ -1,13 +1,3 @@
-<!doctype html>
-<html lang="fr" data-theme="keyland">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-</head>
-
 <body x-data="{open: false}">
 <nav class="bg-black">
     <div class="mx-auto max-w px-2 sm:px-6 lg:px-8">
@@ -45,7 +35,7 @@
                     @click.outside="open = false">
                     <div class="py-1" role="none">
                         <a href="#" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
-                           id="menu-item-0">Home</a>
+                           id="menu-item-0">Accueil</a>
                         <a href="#" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
                            id="menu-item-1">Catalogue</a>
                     </div>
@@ -62,9 +52,9 @@
 
                 <!-- HOME / CATALOGUE -->
                 <div class="flex">
-                    <a href="#"
-                       class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium">Home</a>
-                    <a href="#"
+                    <a href="/"
+                       class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium">Accueil</a>
+                    <a href="/catalogue"
                        class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium font-['Roboto'] ">Catalogue</a>
                 </div>
             </div>
