@@ -35,10 +35,12 @@
                     role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1"
                     @click.outside="open = false">
                     <div class="py-1" role="none">
-                        <a href="#" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                        <a href="/" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
                            id="menu-item-0">Home</a>
-                        <a href="#" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                        <a href="/catalogue" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
                            id="menu-item-1">Catalogue</a>
+                        <a href="/account" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                           id="menu-item-1">Compte</a>
                     </div>
                 </div>
             </div>
@@ -47,8 +49,7 @@
             <div class="hidden lg:flex items-center space-x-6">
                 <!-- LOGO Keyland -->
                 <div class="flex">
-                    <img class="h-12 w-auto" src="{{ asset("image/logo.keyland.svg") }}"
-                         alt="Logo Keyland">
+                    <img class="h-12 w-auto" src="{{ asset("image/logo.keyland.svg") }}" alt="Logo Keyland">
                 </div>
 
                 <!-- HOME / CATALOGUE -->
@@ -106,15 +107,14 @@
                 </div>
 
                 <!-- picto cart -->
-                <button type="button" class="relative rounded-full ">
-                    <img class="w-8 " src="{{ asset("image/picto.cart.svg") }}" alt="Picto Cart">
-                </button>
+                <a href="/card" class="px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">
+                        <img class="w-8 " src="{{ asset("image/picto.cart.svg") }}" alt="Picto Cart">
+                </a>
 
                 <!-- picto compte -->
-                <button type="button" class="relative rounded-full p-1 hidden lg:block">
+                <a href="/account" class="px-4 py-2 text-sm hidden lg:block" role="menuitem" tabindex="-1" id="menu-item-0">
                     <img class="h-8 w-auto" src="{{ asset("image/picto.compte.svg") }}" alt="Picto Compte">
-                </button>
-
+                </a>
             </div>
 
         </div>

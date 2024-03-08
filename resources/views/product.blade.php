@@ -13,7 +13,7 @@
             <h2 class="text-white-figma text-4xl mt-20 lg:mt-0">{{ $product->name }}</h2>
             <p class="text-white-figma text-xl mt-5">{{ $product->description }}</p>
             </div>
-            <p class="text-4xl text-right text-pink-figma">{{ $product->price }}€</p>
+            <p class="text-4xl text-right text-pink-figma">{{ $vat }}€ TTC</p>
         </div>
     </div>
     <button class="btn btn-block bg-yellow-figma border-none mt-10 lg:mt-20 h-16 lg:w-fit lg:text-xl lg:pl-16 lg:pr-16">Ajouter au panier</button>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CardController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\PostController;
@@ -22,6 +23,7 @@ Route::get('/', [HomepageController::class, 'show'])->name('homepage');
 Route::get('/catalogue', [CatalogueController::class, 'index'] );
 
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product');
+Route::get('/card', [CardController::class, 'show'])->name('card');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -34,5 +36,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
-
