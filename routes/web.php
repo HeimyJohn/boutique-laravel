@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\CatalogueController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,13 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
-Route::get('/productadd', function () {
-    return view('productadd');
-});
+Route::get('/', [HomepageController::class, 'show'])->name('homepage');
+Route::get('/catalogue', [CatalogueController::class, 'index'] );
 
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product');
 

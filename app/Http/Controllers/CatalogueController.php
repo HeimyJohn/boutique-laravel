@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Product;
-use Illuminate\Http\Request ;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
-use Illuminate\Pagination\LengthAwarePaginator;
+use Nette\Utils\Paginator;
 
-class ProductController extends Controller
+class CatalogueController extends Controller
 {
-
+//    public function index(): Paginator
+//    {
+//        return Product::paginate(15);
+//    }
     public function index(Request $search)
     {
         $text = $search->input('search');
@@ -21,18 +25,10 @@ class ProductController extends Controller
         }
 
         return view('catalogue', [
-            'products' => $products  //->paginate(8),
+            'search_terms' => $text,
+            'products' => $products,
         ]);
 
-    }
-
-    public function show(string $id): View
-    {
-        $product = Product::where('id', $id)->first();
-
-        return view('product', [
-            'product' => $product,
-        ]);
     }
 
 }
