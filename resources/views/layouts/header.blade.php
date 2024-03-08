@@ -1,13 +1,3 @@
-<!doctype html>
-<html lang="fr" data-theme="keyland">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-</head>
-
 <body x-data="{open: false}">
 <nav class="bg-black">
     <div class="mx-auto max-w px-2 sm:px-6 lg:px-8">
@@ -98,9 +88,16 @@
                                           clip-rule="evenodd"/>
                                 </svg>
                             </div>
-                            <input id="search" name="search"
-                                   class="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
-                                   placeholder="Search" type="search">
+                            <form method="GET" action="/catalogue/">
+                                @csrf
+                                <input id="search"
+                                       name="search"
+                                       class="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
+                                       placeholder="Search"
+                                       type="search"
+                                    value="{{ request('search') }}"
+                                >
+                            </form>
                         </div>
                     </div>
                 </div>
