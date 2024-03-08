@@ -10,10 +10,7 @@ use Nette\Utils\Paginator;
 
 class CatalogueController extends Controller
 {
-//    public function index(): Paginator
-//    {
-//        return Product::paginate(15);
-//    }
+
     public function index(Request $search)
     {
         $text = $search->input('search');
@@ -30,5 +27,7 @@ class CatalogueController extends Controller
         ]);
 
     }
+
+
 
 }

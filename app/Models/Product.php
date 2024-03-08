@@ -30,4 +30,13 @@ class Product extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    protected $fillable = [
+        'name',
+        'price',
+        'description',
+        'stock',
+        'categories',
+        'vat_id',
+        'category_id'];
 }

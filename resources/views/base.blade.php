@@ -10,14 +10,18 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @vite('resources/css/app.css')
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
 </head>
 
 <body x-data="{open: false}" class="">
 
-
-<div class="bg-black-figma">
-    @include("layouts.header")
+<div class="bg-black-figma ">
+    @include('layouts.header')
+    <!-- popup pour dire qu'un produit à était ajouter-->
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     @yield('content')
 </div>
 

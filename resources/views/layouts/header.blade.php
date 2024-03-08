@@ -1,6 +1,4 @@
-
 <nav class="bg-black fixed z-20 w-full">
-
     <div class="mx-auto max-w px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
 
@@ -98,7 +96,7 @@
                                        class="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
                                        placeholder="Search"
                                        type="search"
-                                    value="{{ request('search') }}"
+                                       value="{{ request('search') }}"
                                 >
                             </form>
 
@@ -115,8 +113,8 @@
                 <a href="/account" class="px-4 py-2 text-sm hidden lg:block" role="menuitem" tabindex="-1" id="menu-item-0">
                     <img class="h-8 w-auto" src="{{ asset("image/picto.compte.svg") }}" alt="Picto Compte">
                 </a>
-            </div>
 
+            </div>
         </div>
     </div>
 </nav>
