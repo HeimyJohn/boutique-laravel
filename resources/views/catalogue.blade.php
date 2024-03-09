@@ -3,9 +3,13 @@
 @section('content')
 
     <div class="bg-black text-white">
-        <h1 class="pt-16 text-5xl text-center border-b-4">
-            Catalogue des produits
-        </h1>
+
+        <div class="flex justify-center pt-20 pb-8">
+            <h1 class="text-3xl text-center w-96 pb-4 border-b-4">
+                TOUS NOS CLAVIERS
+            </h1>
+        </div>
+
         <h2 class="text-center text-2xl">
             @if($search_terms!=null)
                 Résultats de la recherche pour "{{ $search_terms }}"
@@ -33,7 +37,7 @@
                                 class="drop-shadow-white h-full w-full object-cover object-center lg:h-full lg:w-full">
                             </div>
                             <a href="/product/{{ $product->id }}">
-                                <div >
+                                <div>
                                     <div>
                                         <div>
                                             <h3 class="text-2xl">
@@ -45,7 +49,9 @@
                                     </div>
 
                                     <div class="flex flex-initial justify-between items-center">
-                                        <button class="mt-5 border-none btn bg-yellow-figma">En savoir plus</button>
+                                        <button class="mt-5 border-none btn bg-yellow-figma" style="color:black">En
+                                            savoir plus
+                                        </button>
                                         <p class="mt-2 text font-medium text-end">{{ $product->price }}€</p>
                                     </div>
                                 </div>
@@ -60,7 +66,7 @@
     </div>
 
     <div class="mt-6 pb-20">
-                    {{ $products->links() }}
+        {{ $products->links() }}
     </div>
 
 @endsection
