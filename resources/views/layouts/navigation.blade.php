@@ -11,10 +11,16 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+{{--                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">--}}
+{{--                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">--}}
+{{--                        {{ __('Dashboard') }}--}}
+{{--                    </x-nav-link>--}}
+{{--                </div>--}}
+                <div class="flex py-2" role="none">
+                    <a href="{{ route('homepage') }}" class="text-yellow-figma block px-4 py-2 text-lg" role="menuitem" tabindex="-1"
+                       id="menu-item-0">Home</a>
+                    <a href="{{ route('catalogue') }}" class="text-yellow-figma block px-4 py-2 text-lg" role="menuitem" tabindex="-1"
+                       id="menu-item-1">Catalogue</a>
                 </div>
             </div>
 

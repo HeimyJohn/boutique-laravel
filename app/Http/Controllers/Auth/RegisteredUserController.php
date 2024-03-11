@@ -43,15 +43,19 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+<<<<<<< Updated upstream
 //            'last_name' => $request->name,
 //            'first_name' => $request->name,
             'roles_id' => Role::where('access', 'user')->get()->id,
+=======
+            'roles_id' => Role::where('access', 'user')->first()->id,
+>>>>>>> Stashed changes
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return \view('welcome');
+        return \view('homepage');
     }
 }

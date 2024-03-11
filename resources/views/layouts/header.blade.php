@@ -46,9 +46,16 @@
 
             <div class="hidden lg:flex items-center space-x-6">
                 <!-- LOGO Keyland -->
+<<<<<<< Updated upstream
                 <div class="flex">
                     <img class="h-12 w-auto" src="{{ asset("image/logo.keyland.svg") }}" alt="Logo Keyland">
                 </div>
+=======
+{{--                <div class="flex">--}}
+{{--                    <img class="h-12 w-auto" src="{{ asset("image/logo.keyland.svg") }}"--}}
+{{--                         alt="Logo Keyland">--}}
+{{--                </div>--}}
+>>>>>>> Stashed changes
 
                 <!-- HOME / CATALOGUE -->
                 <div class="flex">
@@ -66,10 +73,10 @@
                          alt="title keyland">
                 </div>
                 <!-- logo center mobile -->
-                <div class="flex lg:hidden">
-                    <img class="h-12 w-auto" src="{{ asset("image/logo.keyland.svg") }}"
-                         alt="Logo Keyland">
-                </div>
+{{--                <div class="flex lg:hidden">--}}
+{{--                    <img class="h-12 w-auto" src="{{ asset("image/logo.keyland.svg") }}"--}}
+{{--                         alt="Logo Keyland">--}}
+{{--                </div>--}}
             </div>
 
             <!-- Pictogramme  -->
