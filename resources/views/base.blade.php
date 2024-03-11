@@ -14,24 +14,25 @@
 
 <body x-data="{open: false}" class="">
 
-<<<<<<< Updated upstream
-<div class="bg-black-figma ">
-    @include('layouts.header')
-    <!-- popup pour dire qu'un produit à était ajouter-->
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-=======
-
 <div class="bg-black-figma">
     @auth
-        @include("layouts.navigation")
+        @include('layouts.header')
+        <!-- popup pour dire qu'un produit à était ajouter-->
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
     @else
-        @include("layouts.navbar")
+        @include('layouts.header')
+        <!-- popup pour dire qu'un produit à était ajouter-->
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
     @endauth
->>>>>>> Stashed changes
+
     @yield('content')
 </div>
 

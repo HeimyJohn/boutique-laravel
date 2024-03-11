@@ -6,7 +6,6 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 

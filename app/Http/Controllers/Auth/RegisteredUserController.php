@@ -32,24 +32,19 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+//            'last_name' => ['required', 'string', 'max:255'],
+//            'first_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-          //  'last_name' => ['required', 'string', 'max:255'],
-          //  'first_name' => ['required', 'string', 'max:255'],
+
         ]);
 
         $user = User::create([
-            'name' => $request->name,
+            'last_name' => $request->name,
+            'first_name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-<<<<<<< Updated upstream
-//            'last_name' => $request->name,
-//            'first_name' => $request->name,
-            'roles_id' => Role::where('access', 'user')->get()->id,
-=======
             'roles_id' => Role::where('access', 'user')->first()->id,
->>>>>>> Stashed changes
         ]);
 
         event(new Registered($user));
