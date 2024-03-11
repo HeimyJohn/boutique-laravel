@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductAddController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CatalogueController;
@@ -28,6 +29,8 @@ Route::post('/set-cart-session', [SessionController::class, 'setCartSession']);
 Route::get('/', [HomepageController::class, 'show'])->name('homepage');
 
 Route::get('/catalogue', [CatalogueController::class, 'index'] )->name('catalogue');
+
+Route::get('/category/{id}', [CategoryController::class, 'index'])->name('category');
 
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product');
 Route::get('/cart', [CartController::class, 'show'])->name('cart');
