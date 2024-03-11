@@ -46,16 +46,9 @@
 
             <div class="hidden lg:flex items-center space-x-6">
                 <!-- LOGO Keyland -->
-<<<<<<< Updated upstream
                 <div class="flex">
                     <img class="h-12 w-auto" src="{{ asset("image/logo.keyland.svg") }}" alt="Logo Keyland">
                 </div>
-=======
-{{--                <div class="flex">--}}
-{{--                    <img class="h-12 w-auto" src="{{ asset("image/logo.keyland.svg") }}"--}}
-{{--                         alt="Logo Keyland">--}}
-{{--                </div>--}}
->>>>>>> Stashed changes
 
                 <!-- HOME / CATALOGUE -->
                 <div class="flex">
@@ -73,10 +66,10 @@
                          alt="title keyland">
                 </div>
                 <!-- logo center mobile -->
-{{--                <div class="flex lg:hidden">--}}
-{{--                    <img class="h-12 w-auto" src="{{ asset("image/logo.keyland.svg") }}"--}}
-{{--                         alt="Logo Keyland">--}}
-{{--                </div>--}}
+                <div class="flex lg:hidden">
+                    <img class="h-12 w-auto" src="{{ asset("image/logo.keyland.svg") }}"
+                         alt="Logo Keyland">
+                </div>
             </div>
 
             <!-- Pictogramme  -->
@@ -113,7 +106,7 @@
 
                 <!-- picto cart -->
                 <a href="/card" class="px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">
-                        <img class="w-8 " src="{{ asset("image/picto.cart.svg") }}" alt="Picto Cart">
+                    <img class="w-8 " src="{{ asset("image/picto.cart.svg") }}" alt="Picto Cart">
                 </a>
 
                 <!-- picto compte -->
