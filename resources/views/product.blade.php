@@ -16,7 +16,7 @@
             <p class="text-4xl text-right text-pink-figma">{{ $vat }}€ TTC</p>
         </div>
     </div>
-    <form action="/set-card-session?id={{ $product->id }}" method="POST">
+    <form action="/set-cart-session?id={{ $product->id }}" method="POST">
         @csrf
         <input type="submit" value="Ajouter au panier" class="btn btn-block bg-yellow-figma border-none mt-10 lg:mt-20 h-16 lg:w-fit lg:text-xl lg:pl-16 lg:pr-16"></input>
     </form>
