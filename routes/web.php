@@ -6,6 +6,8 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,12 +22,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::post('/set-card-session', [SessionController::class, 'setCardSession']);
 Route::get('/', [HomepageController::class, 'show'])->name('homepage');
 Route::get('/catalogue', [CatalogueController::class, 'index'] );
 
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product');
 Route::get('/card', [CardController::class, 'show'])->name('card');
-
 
 // Route pour productadd
 Route::post('/product/store', [ProductAddController::class, 'store'])->name('product.store');
