@@ -14,7 +14,6 @@
 
                     </button>
                 </div>
-
                 <div
                     x-show="open"
                     x-transition:enter="transition ease-out duration-100"
@@ -35,7 +34,8 @@
                     <div class="py-1" role="none">
                         <a href="/" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
                            id="menu-item-0">Home</a>
-                        <a href="/catalogue" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                        <a href="/catalogue" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem"
+                           tabindex="-1"
                            id="menu-item-1">Catalogue</a>
                         <a href="/card" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
                            id="menu-item-1">Panier</a>
@@ -43,8 +43,6 @@
                     </div>
                 </div>
             </div>
-
-
             <div class="hidden lg:flex items-center space-x-6">
                 <!-- LOGO Keyland -->
                 <div class="flex">
@@ -61,7 +59,6 @@
                        class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium font-['Roboto'] ">Panier</a>
                 </div>
             </div>
-
             <!-- title keyland -->
             <div class="flex items-center">
                 <div class="">
@@ -74,18 +71,18 @@
                          alt="Logo Keyland">
                 </div>
             </div>
-
             <!-- Pictogramme  -->
             <div class="flex items-center sm:static sm:inset-auto ">
                 <!-- picto compte -->
                 <div class="hidden sm:flex sm:items-center sm:ms-6">
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
-                            <button class="inline-flex items-center border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500  hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-{{--                                <div>{{ Auth::user()->name }}</div>--}}
-
+                            <button
+                                class="inline-flex items-center border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500  hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                {{--                                <div>{{ Auth::user()->name }}</div>--}}
                                 <div class="">
-                                    <img class="h-8 w-auto" src="{{ asset("image/picto.compte.svg") }}" alt="Picto Compte">
+                                    <img class="h-8 w-auto" src="{{ asset("image/picto.compte.svg") }}"
+                                         alt="Picto Compte">
                                 </div>
                             </button>
                         </x-slot>
@@ -111,7 +108,6 @@
                         </x-slot>
                     </x-dropdown>
                 </div>
-
             </div>
         </div>
     </div>

@@ -29,13 +29,8 @@
         @endif
     @else
         @include('layouts.header')
-        <!-- popup pour dire qu'un produit à était ajouter-->
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
     @endauth
+
 
     @yield('content')
 </div>

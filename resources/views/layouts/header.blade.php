@@ -1,4 +1,4 @@
-<nav class="bg-black fixed z-20 w-full">
+<nav class="bg-black-figma fixed z-20 w-full">
     <div class="mx-auto max-w px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
 
@@ -47,9 +47,12 @@
 
             <div class="hidden lg:flex items-center space-x-6">
                 <!-- LOGO Keyland -->
+
+
                 <div class="flex">
                     <img class="h-12 w-auto" src="{{ asset("image/logo.keyland.svg") }}" alt="Logo Keyland">
                 </div>
+
 
                 <!-- HOME / CATALOGUE -->
                 <div class="flex">
