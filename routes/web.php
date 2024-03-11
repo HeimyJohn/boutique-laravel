@@ -6,6 +6,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -29,7 +30,7 @@ Route::get('/card', [CardController::class, 'show'])->name('card');
 
 // Route pour productadd
 Route::post('/product/store', [ProductAddController::class, 'store'])->name('product.store');
-Route::get('/product/add', [ProductAddController::class, 'create'])->name('product.create');
+Route::get('/admin/product/add', [ProductAddController::class, 'create'])->name('product.create');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

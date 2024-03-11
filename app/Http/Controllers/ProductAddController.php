@@ -39,7 +39,7 @@ class ProductAddController extends Controller
         ]);
 
         // return redirect('/', ['name' => $product->name, 'product' => $product->uuid])->with('success', 'Product added successfully');
-        return redirect()->route('toto', ['name' => $product->name])->with('success', 'Product added successfully');
+        return redirect()->route('product.create', ['name' => $product->name])->with('success', 'Product added successfully');
     }
 
 
