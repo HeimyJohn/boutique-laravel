@@ -22,9 +22,9 @@ class ProductAddController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'min:8', 'max:255'],
 //          'slug' => ['required', 'string', 'min:8', 'max:255' , 'regrex:/^[a-z0-9-]+$/', 'unique:products'],
-            'price' => ['required', 'integer'],
+            'price' => ['required', 'integer', 'min:0'],
             'description' => ['required', 'string'],
-            'stock' => ['required', 'integer'],
+            'stock' => ['required', 'integer', 'min:0'],
             'category' => ['required'],
         ]);
 //dd(Category::where('name', $request->category)->first()->id);
