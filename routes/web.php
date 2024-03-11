@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\CardController;
-use App\Http\Controllers\ProductAddController;
+use App\Http\Controllers\ProductAdminController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\ProfileController;
@@ -29,12 +29,14 @@ Route::get('/', [HomepageController::class, 'show'])->name('homepage');
 
 Route::get('/catalogue', [CatalogueController::class, 'index'] )->name('catalogue');
 
-Route::get('/product/{id}', [ProductController::class, 'show'])->name('product');
+Route::get('/product/{product}', [ProductController::class, 'show'])->name('product');
 Route::get('/card', [CardController::class, 'show'])->name('card');
 
 // Route pour productadd
-Route::post('/product/store', [ProductAddController::class, 'store'])->name('product.store');
-Route::get('/admin/product/add', [ProductAddController::class, 'create'])->name('product.create');
+Route::post('/admin/product/createdb', [ProductAdminController::class, 'createInDB'])->name('product.createInDB');
+Route::post('/admin/product/updatedb', [ProductAdminController::class, 'updateInDB'])->name('product.updateInDB');
+Route::get('/admin/product/add', [ProductAdminController::class, 'create'])->name('product.create');
+Route::get('/admin/product/{product}/update/', [ProductAdminController::class, 'update'])->name('product.update');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
