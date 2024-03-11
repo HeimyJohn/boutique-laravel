@@ -16,7 +16,7 @@
 
 <div class="bg-black-figma">
     @auth
-        @include('layouts.header')
+        @include('layouts.navigation')
         <!-- popup pour dire qu'un produit à était ajouter-->
         @if (session('success'))
             <div class="alert alert-success">
@@ -24,14 +24,9 @@
             </div>
         @endif
     @else
-        @include('layouts.header')
-        <!-- popup pour dire qu'un produit à était ajouter-->
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
+        @include('layouts.navbar')
     @endauth
+
 
     @yield('content')
 </div>
