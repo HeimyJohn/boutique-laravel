@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\CardController;
-use App\Http\Controllers\ProductAdminController;
+
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CatalogueController;
+use App\Http\Controllers\ProductAdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SessionController;
@@ -24,13 +25,13 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::post('/set-card-session', [SessionController::class, 'setCardSession']);
+Route::post('/set-cart-session', [SessionController::class, 'setCartSession']);
 Route::get('/', [HomepageController::class, 'show'])->name('homepage');
 
 Route::get('/catalogue', [CatalogueController::class, 'index'] )->name('catalogue');
 
 Route::get('/product/{product}', [ProductController::class, 'show'])->name('product');
-Route::get('/card', [CardController::class, 'show'])->name('card');
+Route::get('/cart', [CartController::class, 'show'])->name('cart');
 
 // Route pour productadd
 Route::post('/admin/product/createdb', [ProductAdminController::class, 'createInDB'])->name('product.createInDB');

@@ -1,4 +1,4 @@
-<nav class="bg-black fixed z-20 w-full">
+<nav class="bg-black-figma fixed z-20 w-full">
     <div class="mx-auto max-w px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
 
@@ -37,8 +37,9 @@
                            id="menu-item-0">Home</a>
                         <a href="/catalogue" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
                            id="menu-item-1">Catalogue</a>
-                        <a href="/account" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                        <a href="/dashboard" class="text-yellow-figma block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
                            id="menu-item-1">Compte</a>
+
                     </div>
                 </div>
             </div>
@@ -46,14 +47,17 @@
 
             <div class="hidden lg:flex items-center space-x-6">
                 <!-- LOGO Keyland -->
+
+
                 <div class="flex">
                     <img class="h-12 w-auto" src="{{ asset("image/logo.keyland.svg") }}" alt="Logo Keyland">
                 </div>
 
+
                 <!-- HOME / CATALOGUE -->
                 <div class="flex">
                     <a href="/"
-                       class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium">Home</a>
+                       class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium font-['Roboto'] ">Home</a>
                     <a href="/catalogue"
                        class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium font-['Roboto'] ">Catalogue</a>
                 </div>
@@ -105,12 +109,12 @@
                 </div>
 
                 <!-- picto cart -->
-                <a href="/card" class="px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">
+                <a href="/cart" class="px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">
                     <img class="w-8 " src="{{ asset("image/picto.cart.svg") }}" alt="Picto Cart">
                 </a>
 
                 <!-- picto compte -->
-                <a href="/account" class="px-4 py-2 text-sm hidden lg:block" role="menuitem" tabindex="-1" id="menu-item-0">
+                <a href="/dashboard" class="px-4 py-2 text-sm hidden lg:block" role="menuitem" tabindex="-1" id="menu-item-0">
                     <img class="h-8 w-auto" src="{{ asset("image/picto.compte.svg") }}" alt="Picto Compte">
                 </a>
 

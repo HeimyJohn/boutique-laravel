@@ -62,8 +62,18 @@
                     <!-- More products... -->
                 </div>
             @endif
+
         </div>
+        @auth
+        <a href="/admin/product/add" class="flex justify-center">
+            <button class="btn mb-5 border-none bg-purple-figma text-white-figma">
+                Ajouter un produit au catalogue
+            </button>
+        </a>
+        @endauth
     </div>
+
+
 
     <div class="mt-6 pb-20">
         {{ $products->links() }}
