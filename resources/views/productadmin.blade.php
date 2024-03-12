@@ -46,6 +46,7 @@
                 <x-input-error :messages="$errors->get('stock')" class="mt-2"/>
             </div>
 
+
             {{--            @dd($categories, $product->category)--}}
 
             <!-- Categories -->
