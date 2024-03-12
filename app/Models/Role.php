@@ -12,8 +12,8 @@ class Role extends Model
 {
     use HasFactory, HasUuids;
 
-    public function user(): BelongsTo
+    public function user(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->belongsTo(User::class, 'roles_id');
+        return $this->hasOne(User::class);
     }
 }

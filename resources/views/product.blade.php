@@ -20,14 +20,17 @@
                                class="btn btn-block bg-yellow-figma border-none mt-10 lg:mt-20 h-16 lg:w-fit lg:text-xl lg:pl-16 lg:pr-16"></input>
                     </form>
 
-                    {{-- A AFFICHER UNIQUEMENT EN MODE @auth et si user=ADMIN --}}
-                    <a class="flex justify-end" href="{{ route('product.update', $product) }}">
-                        <button class="mt-5 border-none btn bg-purple-figma text-white-figma" >Modifier le produit</button>
-                    </a>
+                    {{-- A AFFICHER UNIQUEMENT EN MODE ADMIN --}}
+                    @can("create", \App\Models\Product::class)
+                        <a class="flex justify-end" href="{{ route('product.update', $product) }}">
+                            <button class="mt-5 border-none btn bg-purple-figma text-white-figma">Modifier le produit
+                            </button>
+                        </a>
+                    @endcan
 
                 </div>
             </div>
         </div>
     </div>
-</div>
+    </div>
 @endsection
