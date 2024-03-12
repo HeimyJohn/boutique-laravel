@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -28,7 +29,7 @@ class User extends Authenticatable
         'email',
         'password',
         'payment_method',
-        'roles_id',
+        'role_id',
     ];
 
     /**
@@ -51,10 +52,16 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function role(): HasOne
+    public function role(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasOne(Role::class);
+        return $this->belongsTo(Role::class, 'role_id');
     }
+
+    public function isAdmin(): bool
+    {
+        return $this->role->access === 'admin';
+    }
+
 
     public function address(): HasMany
     {

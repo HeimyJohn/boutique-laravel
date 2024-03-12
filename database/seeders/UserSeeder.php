@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
         User::factory()->create([
             'email' => 'exemple@root.com',
             'password' => '0000',
-            'roles_id' => Role::where('access', 'admin')->first()->id,
+            'role_id' => Role::where('access', 'admin')->first()->id,
         ]);
         User::factory(10)->create();
     }

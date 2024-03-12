@@ -21,13 +21,16 @@
                     </form>
 
                     {{-- A AFFICHER UNIQUEMENT EN MODE @auth et si user=ADMIN --}}
-                    <a class="flex justify-end" href="{{ route('product.update', $product) }}">
-                        <button class="mt-5 border-none btn bg-purple-figma text-white-figma" >Modifier le produit</button>
-                    </a>
+                    @can("create", \App\Models\Product::class)
+                        <a class="flex justify-end" href="{{ route('product.update', $product) }}">
+                            <button class="mt-5 border-none btn bg-purple-figma text-white-figma">Modifier le produit
+                            </button>
+                        </a>
+                    @endcan
 
                 </div>
             </div>
         </div>
     </div>
-</div>
+    </div>
 @endsection
