@@ -14,7 +14,7 @@
                 <x-input-label for="name" :value="__('Nom')"/>
                 {{--                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />--}}
                 <x-text-input id="name" class="block mt-1 w-full" type="text" name="name"
-                              :value="old('name', $product->name)"
+                              :value="{{ $updating ? old('name', $product->name) : "" }}"
                               required autofocus autocomplete="name"/>
                 <x-input-error :messages="$errors->get('name')" class="mt-2"/>
             </div>
@@ -23,7 +23,7 @@
             <div class="mt-4">
                 <x-input-label for="price" :value="__('Prix en €')"/>
                 <x-text-input id="price" class="block mt-1 w-full" type="text" name="price"
-                              :value="old('price', $product->price)"
+                              :value="{{ $updating ? old('price', $product->price) : "" }}"
                               required autofocus autocomplete="price"/>
                 <x-input-error :messages="$errors->get('price')" class="mt-2"/>
             </div>
@@ -32,7 +32,7 @@
             <div class="mt-4">
                 <x-input-label for="description" :value="__('Description')"/>
                 <x-text-input id="description" class="block mt-1 w-full" type="text" name="description"
-                              :value="old('description', $product->description)"
+                              :value="{{ $updating ? old('description', $product->description) : "" }}"
                               required autocomplete="description"/>
                 <x-input-error :messages="$errors->get('description')" class="mt-2"/>
             </div>
@@ -41,7 +41,7 @@
             <div class="mt-4">
                 <x-input-label for="stock" :value="__('Stock')"/>
                 <x-text-input id="stock" class="block mt-1 w-full" type="text" name="stock"
-                              :value="old('stock', $product->stock)"
+                              :value="{{ $updating ? old('stock', $product->stock) : "" }}"
                               required autocomplete="stock"/>
                 <x-input-error :messages="$errors->get('stock')" class="mt-2"/>
             </div>
@@ -54,7 +54,7 @@
                 <select class="form-control w-full" name="category" id="category">
                     @foreach($categories as $category)
                         <option
-                            {{ $product->category->id === $category->id ? "selected" : "" }} value="{{ $category['name'] }}">{{ ucfirst($category['name']) }}</option>
+                            {{ $updating ? ($product->category->id === $category->id ? "selected" : "") : "" }} value="{{ $category['name'] }}">{{ ucfirst($category['name']) }}</option>
                     @endforeach
                 </select>
                 <x-input-error :messages="$errors->get('categories')" class="mt-2"/>
