@@ -18,10 +18,10 @@
 
 <body x-data="{open: false}" class="">
 
-<div class="bg-black-figma">
+<div class="bg-black-figma h-dvh">
     @auth
         @include('layouts.header')
-        <!-- popup pour dire qu'un produit à était ajouter-->
+        <!-- popup pour dire qu'un produit a été ajouté -->
         @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
