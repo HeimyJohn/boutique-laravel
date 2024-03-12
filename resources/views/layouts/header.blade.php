@@ -109,7 +109,7 @@
                 </div>
 
                 <!-- picto cart -->
-                <a href="/card" class="px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">
+                <a href="/cart" class="px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">
                     <img class="w-8 " src="{{ asset("image/picto.cart.svg") }}" alt="Picto Cart">
                 </a>
 
