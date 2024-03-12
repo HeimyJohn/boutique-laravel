@@ -25,9 +25,11 @@
         </div>
         <div class="mb-10 mt-5 flex items-end justify-between lg:w-1/3 lg:ml-20">
             <div class="number-input">
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                <input class="quantity text-xl font-medium ml-5 mr-5" min="0" name="quantity" value="{{ Session::get('products.' . $key . '.quantity') }}" type="number">
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                <form action="/modify-cart-session?id={{ $product->id }}" method="POST">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                    <input class="quantity text-xl font-medium ml-5 mr-5" min="0" name="quantity" value="{{ Session::get("products.$key.quantity") }}" type="number">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                </form>
             </div>
             <p class="text-xl">{{ $product->price }}€ TTC</p>
         </div>

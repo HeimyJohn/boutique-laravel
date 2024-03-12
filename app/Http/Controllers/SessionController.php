@@ -8,17 +8,6 @@ use Illuminate\Support\Facades\Session;
 
 class SessionController extends Controller
 {
-    // public function getCartSession()
-    // {
-    //     if (Session::has('product')) {
-    //         for ($i = 0; $i < count(Session::get('product')); $i++) {
-    //             $products[$i] = Product::select('*')->where('id',  '=',  Session::get('product.' . $i . '.id'))->first();
-    //         }
-    //     }
-
-    //     return $products;
-    // }
-
     public function setCartSession(Request $request)
     {
         // Session::flush('id_product', 'quantity', 'id', 'product, products');
@@ -34,21 +23,37 @@ class SessionController extends Controller
                 }
             }
 
-            foreach (Session::get('products') as $key => $value) {
-                if ($idExists) {
-                    if ($id === $session['id']) {
-                        session(["products.$key.quantity" => $session['quantity'] + 1]);
+            if ($idExists) {
+                foreach (Session::get('products') as $key => $value) {
+                    if ($id === Session::get("products.$key.id")) {
+                        Session::put(["products.$key.quantity" => $session['quantity'] + 1]);
                         break;
                     }
                 }
+            } else {
+                Session::push('products', ['id' => $id, 'quantity' => 1]);
             }
 
-            Session::push('products', ['id' => $id, 'quantity' => 1]);
         } else {
             Session::push('products', ['id' => $id, 'quantity' => 1]);
         }
 
         return redirect()->route('cart');
+    }
+
+    public function modifyCartSession(Request $request)
+    {
+        $id = $request->input('id');
+
+        dd('test');
+
+        if (Session::has('product')) {
+            for ($i = 0; $i < count(Session::get('product')); $i++) {
+                $products[$i] = Product::select('*')->where('id',  '=',  Session::get('product.' . $i . '.id'))->first();
+            }
+        }
+
+        return $products;
     }
 
     // public function deleteCartSession(Request $request)

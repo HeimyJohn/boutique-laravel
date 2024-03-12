@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::post('/set-cart-session', [SessionController::class, 'setCartSession']);
+Route::post('/modify-cart-session', [SessionController::class, 'modifyCartSession']);
 Route::get('/', [HomepageController::class, 'show'])->name('homepage');
 
 Route::get('/catalogue', [CatalogueController::class, 'index'] )->name('catalogue');
