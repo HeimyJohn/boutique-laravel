@@ -38,18 +38,23 @@ Route::get('/product/{product}', [ProductController::class, 'show'])->name('prod
 Route::get('/cart', [CartController::class, 'show'])->name('cart');
 
 // Route pour productadd
-Route::post('/admin/product/createdb', [ProductAdminController::class, 'createInDB'])->name('product.createInDB');
-Route::post('/admin/product/updatedb', [ProductAdminController::class, 'updateInDB'])->name('product.updateInDB');
-Route::get('/admin/product/add', [ProductAdminController::class, 'create'])->name('product.create');
-Route::get('/admin/product/{product}/update/', [ProductAdminController::class, 'update'])->name('product.update');
-
+Route::middleware('admin')->group(function (){
+    Route::prefix('admin/product')->group(function (){
+        Route::post('/createdb', [ProductAdminController::class, 'createInDB'])->name('product.createInDB');
+        Route::post('/updatedb', [ProductAdminController::class, 'updateInDB'])->name('product.updateInDB');
+        Route::get('/add', [ProductAdminController::class, 'create'])->name('product.create');
+        Route::get('/{product}/update/', [ProductAdminController::class, 'update'])->name('product.update');
+    });
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
