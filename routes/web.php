@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\ProductAdminController;
@@ -30,7 +31,10 @@ Route::get('/', [HomepageController::class, 'show'])->name('homepage');
 
 Route::get('/catalogue', [CatalogueController::class, 'index'] )->name('catalogue');
 
+Route::get('/category/{id}', [CategoryController::class, 'index'])->name('category');
+
 Route::get('/product/{product}', [ProductController::class, 'show'])->name('product');
+
 Route::get('/cart', [CartController::class, 'show'])->name('cart');
 
 // Route pour productadd
