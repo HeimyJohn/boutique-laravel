@@ -13,30 +13,52 @@ class SessionController extends Controller
         // Session::flush('id_product', 'quantity', 'id', 'product, products');
 
         $id = $request->input('id');
-        $idExists = null;
 
-        if (Session::has('products')) {
-            foreach (Session::get('products') as $session) {
-                if ($id === $session['id']) {
-                    $idExists = true;
-                    break;
-                }
-            }
-
-            if ($idExists) {
-                foreach (Session::get('products') as $key => $value) {
-                    if ($id === Session::get("products.$key.id")) {
-                        Session::put(["products.$key.quantity" => $session['quantity'] + 1]);
-                        break;
-                    }
-                }
-            } else {
-                Session::push('products', ['id' => $id, 'quantity' => 1]);
-            }
-
-        } else {
-            Session::push('products', ['id' => $id, 'quantity' => 1]);
+        if (!Session::has('products')) {
+            Session::put('products', []);
         }
+
+        $products = Session::get('products');
+
+        if (array_key_exists($id, $products)) {
+            $products[$id]++;
+        } else {
+            $products[$id] = 1;
+        }
+
+        Session::put('products', $products);
+
+            // $productExists = null;
+    //     if (Session::has('products')) {
+    //         foreach (Session::get('products') as $product) {
+    //             if ($id === $product['id']) {
+    //                 $productExists = true;
+    //                 break;
+    //             }
+    //         }
+
+    //         if ($productExists) {
+    //             foreach (Session::get('products') as $product) {
+    //                 if ($id === $product['id']) {
+    //                     // $quantity = $product['quantity']++;
+    //                     // Session::put('products', [$product['id'], $product['quantity']]);
+    //                     // session($product['quantity'], $quantity);
+
+    //                     dd(Session::get('products'), $product);
+    //                     // dd(Session::get("products"), $product);
+    //                     // Session::increment('quantity', $incrementBy = 1);
+                        
+    //                     break;
+    //                 }
+    //             }
+
+    //         } else {
+    //             Session::push('products', ['id' => $id, 'quantity' => 1]);
+    //         }
+
+    //     } else {
+    //         Session::push('products', ['id' => $id, 'quantity' => 1]);
+    //     }
 
         return redirect()->route('cart');
     }
