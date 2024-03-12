@@ -28,28 +28,18 @@ class ProductAdminController extends Controller
             ]);
     }
 
-    public function createInDB(Request $request)
+    public function createInDB(CreateProductRequest $request): RedirectResponse
     {
-        // Validate the request
-        $request->validate([
-            'name' => ['required', 'string', 'min:8', 'max:255'],
-//          'slug' => ['required', 'string', 'min:8', 'max:255' , 'regrex:/^[a-z0-9-]+$/', 'unique:products'],
-            'price' => ['required', 'integer'],
-            'description' => ['required', 'string'],
-            'stock' => ['required', 'integer'],
-            'category' => ['required'],
-        ]);
-
+        $validated = $request->validated();
         // Store the new product in the database
         $product = Product::create([
-            'name' => $request->name,
-            'price' => $request->price,
-            'description' => $request->description,
-            'stock' => $request->stock,
-            'category_id' => Category::where('name', $request->category)->first()->id,
+            'name' => $validated['name'],
+            'price' => $validated['price'],
+            'description' => $validated['description'],
+            'stock' => $validated['stock'],
             'vat_id' => Vat::where('value', 20)->first()->id,
+            'category_id' => Category::where('name', $validated['category'])->first()->id,
         ]);
-
         // Redirect the user to the product creation page with a success message
         return redirect()->route('product.create', ['name' => $product->name])->with('success', 'Product added successfully');
     }
