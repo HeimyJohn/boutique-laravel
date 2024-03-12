@@ -18,7 +18,7 @@
 
 <body x-data="{open: false}" class="">
 
-<div class="bg-black-figma h-dvh">
+<div class="bg-black-figma">
     @auth
         @include('layouts.header')
         <!-- popup pour dire qu'un produit a été ajouté -->
