@@ -14,21 +14,21 @@
             <table class="table-auto border-collapse border border-slate-400">
                 <thead>
                 <tr>
-                    <th class="p-16 border border-slate-300">Nom</th>
-                    <th class="border border-slate-300">Qty</th>
-                    <th class="border border-slate-300">Prix unit.</th>
-                    <th class="border border-slate-300">TVA</th>
-                    <th class="border border-slate-300">Prix total</th>
+                    <th class="pl-2 pr-2 border border-slate-300">Nom</th>
+                    <th class="pl-2 pr-2 border border-slate-300">Qty</th>
+                    <th class="pl-2 pr-2 border border-slate-300">Prix unit.</th>
+                    <th class="pl-2 pr-2 border border-slate-300">TVA</th>
+                    <th class="pl-2 pr-2 border border-slate-300">Prix total</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($products as $product)
                     <tr>
-                        <td class="border border-slate-300 pt-32 text">{{$product['name']}} </td>
-                        <td class="border border-slate-300 pt-32 text">{{$product['quantity']}} </td>
-                        <td class="border border-slate-300 pt-32 text>">{{$product['unitPrice']}}€ HT</td>
-                        <td class="border border-slate-300 pt-32 text>">{{$product['vat']}}%</td>
-                        <td class="border border-slate-300 pt-32 text>">{{$product['totalPrice']}}€ TTC</td>
+                        <td class="pl-2 pr-2 border border-slate-300 text">{{$product['name']}} </td>
+                        <td class="pl-2 pr-2 border border-slate-300 text">{{$product['quantity']}} </td>
+                        <td class="pl-2 pr-2 border border-slate-300 text>">{{$product['unitPrice']}}€ HT</td>
+                        <td class="pl-2 pr-2 border border-slate-300 text>">{{$product['vat']}}%</td>
+                        <td class="pl-2 pr-2 border border-slate-300 text>">{{$product['totalPrice']}}€ TTC</td>
                     </tr>
                 @endforeach
                 </tbody>
