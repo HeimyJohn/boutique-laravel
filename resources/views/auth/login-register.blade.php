@@ -1,11 +1,15 @@
-<x-app-layout>
-    <div class="flex">
-        <h1 class="justify-center">Login</h1>
+<x-guest-layout class="container flex border-4 ">
+    <div class="flex flex-col">
+        <div class="pb-3">
+            <h1 class="text-3xl">Log in</h1>
+        </div>
         @include('auth.login')
     </div>
 
-    <div class="flex">
-        <h1 class="">Register</h1>
+    <div class="flex flex-col">
+        <div class="pb-3">
+            <h1 class="text-3xl">Register</h1>
+        </div>
         @include('auth.register')
     </div>
-</x-app-layout>
+</x-guest-layout>
