@@ -12,6 +12,8 @@ class CartController extends Controller
 {
     public function show(): View
     {
+//         Session::flush();
+
         if (Session::has('products')) {
             $total = 0;
 

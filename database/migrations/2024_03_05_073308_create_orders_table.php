@@ -16,7 +16,8 @@ return new class extends Migration
             $table->tinyText('order_number')->unique();
             $table->dateTime('order_date');
             $table->dateTime('delivery_date')->nullable();
-            $table->tinyText('status');
+            $table->enum('status', ['created', 'paid', 'shipped', 'delivered', 'canceled']);
+            $table->unsignedFloat('total');
             $table->foreignUuid('user_id')->constrained('users');
             $table->foreignUuid('delivery_address_id')->constrained('addresses');
             $table->foreignUuid('billing_address_id')->constrained('addresses');

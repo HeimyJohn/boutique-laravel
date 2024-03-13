@@ -44,7 +44,7 @@ class SessionController extends Controller
             unset($products[$id]);
             Session::put('products', $products);
         }
-        
+
         return redirect()->route('cart');
     }
 

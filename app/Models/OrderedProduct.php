@@ -7,11 +7,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class ProductOrdered extends Model
+class OrderedProduct extends Model
 {
     use HasFactory, HasUuids;
 
-    public function productOrdered(): HasMany {
-        return $this->hasMany(ProductOrderedHasOrder::class, 'product_ordered_id');
+    protected $fillable = [
+        'name',
+        'price',
+        'vat_id',
+    ];
+
+    public function orderedProduct(): HasMany {
+        return $this->hasMany(OrderedProductHasOrder::class, 'ordered_product_id');
     }
 }

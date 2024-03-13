@@ -18,6 +18,11 @@ class UserSeeder extends Seeder
             'password' => '0000',
             'role_id' => Role::where('access', 'admin')->first()->id,
         ]);
+        User::factory()->create([
+            'email' => 'customer@bob.com',
+            'password' => '0000',
+            'role_id' => Role::where('access', 'user')->first()->id,
+        ]);
         User::factory(10)->create();
     }
 }

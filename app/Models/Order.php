@@ -13,6 +13,16 @@ class Order extends Model
 {
     use HasFactory, HasUuids;
 
+    protected $fillable = [
+        'order_number',
+        'order_date',
+        'delivery_date',
+        'user_id',
+        'status',
+        'total',
+        'delivery_address_id',
+        'billing_address_id',
+    ];
     public function delivery(): HasOne {
         return $this->hasOne(Address::class, 'id');
     }
@@ -26,6 +36,6 @@ class Order extends Model
     }
 
     public function order(): HasMany {
-        return $this->hasMany(ProductOrderedHasOrder::class, 'order_id');
+        return $this->hasMany(OrderedProductHasOrder::class, 'order_id');
     }
 }

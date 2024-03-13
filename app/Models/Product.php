@@ -15,7 +15,6 @@ class Product extends Model
 {
     use HasFactory, HasUuids;
 
-
     public function vat(): BelongsTo
     {
         return $this->belongsTo(Vat::class);

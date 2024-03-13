@@ -5,6 +5,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CatalogueController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductAdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
@@ -22,25 +23,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
+// POST
 Route::post('/set-cart-session', [SessionController::class, 'setCartSession']);
 
 Route::post('/modify-cart-session', [SessionController::class, 'modifyCartSession']);
 
+
 Route::get('/', [HomepageController::class, 'show'])->name('homepage');
-
 Route::get('/catalogue', [CatalogueController::class, 'index'] )->name('catalogue');
-
 Route::get('/category/{id}', [CategoryController::class, 'index'])->name('category');
-
 Route::get('/product/{product}', [ProductController::class, 'show'])->name('product');
-
 Route::get('/cart', [CartController::class, 'show'])->name('cart');
 
-// Route pour productadd
+// Routes that need admin privileges
 Route::middleware('admin')->group(function (){
     Route::prefix('admin/product')->group(function (){
         Route::get('/add', [ProductAdminController::class, 'create'])->name('product.create');
@@ -50,16 +45,16 @@ Route::middleware('admin')->group(function (){
         Route::post('/updatedb', [ProductAdminController::class, 'updateInDB'])->name('product.updateInDB');
     });
 });
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/order', [OrderController::class, 'createOrder'])->name('order');
 });
 
 require __DIR__.'/auth.php';
