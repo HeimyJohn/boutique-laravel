@@ -3,13 +3,13 @@
 namespace Database\Factories;
 
 use App\Models\Order;
-use App\Models\ProductOrdered;
+use App\Models\OrderedProduct;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ProductOrderedHasOrder>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\OrderedProductHasOrder>
  */
-class ProductOrderedHasOrderFactory extends Factory
+class OrderedProductHasOrderFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,7 +19,7 @@ class ProductOrderedHasOrderFactory extends Factory
     public function definition(): array
     {
         return [
-            'product_ordered_id' => $this->faker->randomElement(ProductOrdered::pluck('id')),
+            'ordered_product_id' => $this->faker->randomElement(OrderedProduct::pluck('id')),
             'order_id' => $this->faker->randomElement(Order::pluck('id')),
             'quantity' => $this->faker->numberBetween(100, 1000),
         ];

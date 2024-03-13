@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\ProductOrdered;
+use App\Models\OrderedProduct;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ProductOrderedSeeder extends Seeder
+class OrderedProductSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        ProductOrdered::factory(10)->create();
+        // OrderedProduct::factory(10)->create();
     }
 }

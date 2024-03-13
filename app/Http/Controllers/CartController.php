@@ -12,6 +12,8 @@ class CartController extends Controller
 {
     public function show(): View
     {
+//         Session::flush();
+
         if (Session::has('products')) {
             $total = 0;
 
@@ -25,7 +27,7 @@ class CartController extends Controller
 
             foreach ($products as $product) {
                 $product->quantity = array_values(array_intersect_key(Session::get('products'), array_flip(array($product->id))))[0];
-                $product->price = ((($vat->value / 100) * $product->price) + $product->price);
+                $product->price = (((($vat->value / 100) * $product->price) + $product->price) * $product->quantity);
                 $total = ($total + $product->price);
             }
 

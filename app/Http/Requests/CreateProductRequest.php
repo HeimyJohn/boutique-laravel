@@ -23,22 +23,30 @@ class CreateProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'min:8', 'max:255'],
+            'name' => 'required|string|min:8|max:255',
 //          'slug' => ['required', 'string', 'min:8', 'max:255' , 'regrex:/^[a-z0-9-]+$/', 'unique:products'],
-            'price' => ['required', 'integer'],
-            'content' => ['required', 'tinyText'],
-            'stock' => ['required', 'integer'],
-            'categories' => ['required'],
-
+            'price' => 'required|integer',
+            'description' => 'required|string',
+            'stock' => 'required|integer',
+            'category' => 'required',
         ];
     }
 
-    protected function prepareForValidation()
+    public function messages()
     {
-        $this->merge([
-//            'slug' => $this->input('slug') ?: \Str::slug($this->input('title')),
-            'price' => (int) $this->price,
-            'stock' => (int) $this->stock,
-        ]);
+        return [
+            'name.required' => 'Le champ nom est obligatoire',
+            'name.string' => 'Le champ "nom" doit être une chaîne de caractères',
+            'name.max' => 'Le champ "nom" ne doit pas dépasser 255 caractères',
+            'name.min' => 'Le champ "nom" doit comporter au moins 8 caractères',
+            'price.required' => 'Le champ "prix" est obligatoire',
+            'price.integer' => 'Le champ prix doit être un nombre entier',
+            'description.required' => 'Le champ "contenu" est obligatoire',
+            'description.string' => 'Le champ contenu doit être un string',
+            'stock.required' => 'Le champ stock est obligatoire',
+            'stock.integer' => 'Le champ "stock" doit être un nombre entier',
+            'categories.required' => 'Le champ "catégories" doit être renseigné',
+        ];
     }
+
 }

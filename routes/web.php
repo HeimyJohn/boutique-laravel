@@ -26,7 +26,6 @@ use Illuminate\Support\Facades\Route;
 // POST
 Route::post('/set-cart-session', [SessionController::class, 'setCartSession']);
 Route::post('/modify-cart-session', [SessionController::class, 'modifyCartSession']);
-Route::post('/order', [OrderController::class, 'createOrder'])->name('order');
 
 // GET
 Route::get('/', [HomepageController::class, 'show'])->name('homepage');
@@ -53,6 +52,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/order', [OrderController::class, 'createOrder'])->name('order');
 });
 
 require __DIR__.'/auth.php';

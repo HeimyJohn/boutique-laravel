@@ -7,12 +7,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class ProductOrderedHasOrder extends Model
+class OrderedProductHasOrder extends Model
 {
     use HasFactory, HasUuids;
 
-    public function productOrdered(): BelongsTo {
-        return $this->belongsTo(ProductOrdered::class, 'id');
+    protected $fillable = [
+        'ordered_product_id',
+        'order_id',
+        'quantity',
+    ];
+
+    public function orderedProduct(): BelongsTo {
+        return $this->belongsTo(OrderedProduct::class, 'id');
     }
 
     public function order(): BelongsTo {
