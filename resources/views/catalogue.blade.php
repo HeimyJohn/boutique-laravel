@@ -35,7 +35,6 @@
                                         class="drop-shadow-white h-full w-full object-cover object-center lg:h-full lg:w-full"
                                         src={{ asset('image/CLAVIER.png') }} alt="clavier">
                                 </div>
-                            <div>
                                 <div>
                                     <div>
                                         <h3 class="text-2xl">
@@ -55,7 +54,6 @@
                                     <p class="mt-2 text font-medium text-end">{{ $product->price }}€</p>
 
                                 </div>
-                            </div>
                         </div>
                     @endforeach
 
