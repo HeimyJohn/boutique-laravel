@@ -3,21 +3,27 @@
 @section('title', 'Accueil')
 
 @section('content')
-<div class="flex flex-col items-center w-full pt-16">
-    <div class="h-168 overflow-hidden relative w-full flex items-center">
-        <img class="w-full h-full object-cover" src="{{ asset("image/domenico-loia-hGV2TfOh0ns-unsplash.jpg") }}" alt="hero">
-        <div class="absolute top-0 w-full h-full flex flex-col items-center">
+<div class="flex flex-col items-center w-full ">
+    <div class="h-screen overflow-hidden relative w-full flex items-center ">
+        <img class="w-full h-full object-cover" src="{{ asset("image/herobanner.png") }}" alt="hero">
+        <div class="absolute top-0 w-full h-full flex flex-col items-center mt-16">
             <span class="w-full h-full absolute bg-gradient-to-b from-black-figma"></span>
             <h2 class="w-full flex justify-center text-center text-white-figma uppercase text-4xl mt-10 md:pl-16 md:pr-16 pl-5 pr-5 z-10">{{ $flagship_product->name }}</h2>
             <a class="text-white-figma underline z-10 mt-5" href="/product/{{ $flagship_product->id }}">More info</a>
+            <img class="object-cover absolute bottom-0 mb-32 opacity-90" src="{{ asset("image/scroll.svg") }}" alt="hero">
         </div>
     </div>
+
+    <img class="hidden lg:block p-16 w-full" src="{{ asset("image/promopc.png") }}" alt="">
+    <img class="lg:hidden p-10" src="{{ asset("image/promomb.png") }}" alt="">
+
+
     <div class="w-full flex flex-col pl-5 pr-5 pt-16 pb-32 items-end md:pl-16 md:pr-16">
         <div class="w-full flex flex-col items-center">
             <h2 class="text-white-figma text-2xl mb-20">AVIS CLIENT</h2>
             @for ($i = 0; $i < 3; $i++)
-                <div class="md:flex">
-                    <img class="w-full h-full object-cover md:w-1/3" src="{{ asset("image/pngimg.com - keyboard_PNG5861.png") }}" alt="category">
+                <div class="md:flex justify-center">
+                    <img class="object-cover w-300 h-150" src="{{ asset("image/heimer.png") }}" alt="category">
                     <div class="md:w-2/3 md:ml-10">
                         <div class="mt-10 md:mt-0 md:flex md:justify-between md:mb-7">
                             <p class="text-white-figma">DUPONT Jean</p>

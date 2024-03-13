@@ -25,9 +25,10 @@ use Illuminate\Support\Facades\Route;
 
 // POST
 Route::post('/set-cart-session', [SessionController::class, 'setCartSession']);
+
 Route::post('/modify-cart-session', [SessionController::class, 'modifyCartSession']);
 
-// GET
+
 Route::get('/', [HomepageController::class, 'show'])->name('homepage');
 Route::get('/catalogue', [CatalogueController::class, 'index'] )->name('catalogue');
 Route::get('/category/{id}', [CategoryController::class, 'index'])->name('category');
@@ -37,10 +38,11 @@ Route::get('/cart', [CartController::class, 'show'])->name('cart');
 // Routes that need admin privileges
 Route::middleware('admin')->group(function (){
     Route::prefix('admin/product')->group(function (){
-        Route::post('/createdb', [ProductAdminController::class, 'createInDB'])->name('product.createInDB');
-        Route::post('/updatedb', [ProductAdminController::class, 'updateInDB'])->name('product.updateInDB');
         Route::get('/add', [ProductAdminController::class, 'create'])->name('product.create');
+        Route::post('/createdb', [ProductAdminController::class, 'createInDB'])->name('product.createInDB');
+
         Route::get('/{product}/update/', [ProductAdminController::class, 'update'])->name('product.update');
+        Route::post('/updatedb', [ProductAdminController::class, 'updateInDB'])->name('product.updateInDB');
     });
 });
 
