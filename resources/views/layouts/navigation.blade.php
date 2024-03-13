@@ -55,7 +55,7 @@
                        class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium font-['Roboto'] ">Home</a>
                     <a href="/catalogue"
                        class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium font-['Roboto'] ">Catalogue</a>
-                    <a href="/card"
+                    <a href="/cart"
                        class="text-white-figma hover:text-yellow-figma rounded-md px-2 py-4 text-lg font-medium font-['Roboto'] ">Panier</a>
                 </div>
             </div>
